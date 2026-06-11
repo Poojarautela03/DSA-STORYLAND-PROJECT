@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DSA Story-Land — Learn Data Structures Through Stories</title>
+  <meta name="description" content="Master Data Structures & Algorithms through immersive storytelling, interactive demos, and curated interview prep." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================================================
+       HEADER
+       ================================================ -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+
+        <div class="site-logo">
+          <span class="logo-icon" aria-hidden="true">🏰</span>
+          <span class="logo-text">DSA Story-Land</span>
+        </div>
+
+        <nav class="site-nav" aria-label="Chapter navigation">
+          <a class="nav-link" href="#chapter-1">Arrays</a>
+          <a class="nav-link" href="#chapter-2">Linked Lists</a>
+          <a class="nav-link" href="#chapter-3">Queues</a>
+          <a class="nav-link" href="#chapter-4">Searching</a>
+          <a class="nav-link" href="#chapter-5">Sorting</a>
+          <a class="nav-link" href="#chapter-7">Interview Corner</a>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ================================================
+       HERO
+       ================================================ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-eyebrow">Interactive Learning Platform</div>
+      <h1 class="hero-title" id="hero-title">
+        Data Structures,<br />
+        <span class="accent">told as stories.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Every algorithm has a personality. Every data structure has a home.
+        Learn DSA through narrative, interactive demos, and real interview questions.
+      </p>
+      <div class="hero-badges">
+        <span class="badge badge-violet">5 Chapters</span>
+        <span class="badge badge-amber">30+ Quiz Questions</span>
+        <span class="badge badge-teal">Interview Prep</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       MAIN CONTENT
+       ================================================ -->
+  <main class="main-content">
+    <div class="container">
+
+
+      <!-- ============================================
+           CHAPTER 1 — ARRAYS
+           ============================================ -->
+      <section id="chapter-1" class="dsa-chapter" aria-labelledby="ch1-title">
+
+        <header class="chapter-header">
+          <span class="chapter-icon" aria-hidden="true">🧩</span>
+          <div class="chapter-meta">
+            <div class="chapter-number">Chapter 01</div>
+            <h2 class="chapter-title" id="ch1-title">Arrays — The Hostel of Fixed Rooms</h2>
+            <div class="chapter-badges">
+              <span class="complexity-tag fast">Access O(1)</span>
+              <span class="complexity-tag slow">Insert/Delete O(n)</span>
+            </div>
+          </div>
+        </header>
+
+        <p class="story-text">
+          The Grand Array Hostel stood as a testament to order and precision. Built from the ground up,
+          its blueprint dictated an immutable structure of perfectly uniform rooms, each assigned an
+          address — its <strong>index</strong> — starting with the venerable <code>Room 0</code>.
+          The rooms were not just numbered; they were physically contiguous, bolted side-by-side on a
+          single, uninterrupted stretch of memory land.
+        </p>
+        <p class="story-text">
+          This rigidity granted the Master a unique power: <strong>Instantaneous Access</strong>. If the
+          Master needed Room 3, there was no search, no delay. By the simple calculation of
+          <code>Base Address + 3 steps</code>, the door opened — a promise of <strong>O(1)</strong>
+          retrieval speed. You could find any guest, whether in Room 1 or Room 1,000,000, in the blink
+          of an eye.
+        </p>
+        <p class="story-text">
+          However, life was defined by static nature. The real drama unfolded whenever a resident
+          needed to be inserted mid-way. The rule was absolute: all subsequent residents must shift.
+          The guest in Room 2 moves to 3, the one in 3 to 4 — all the way to the end. This mass
+          relocation defined the Hostel's major weakness: a grueling <strong>O(n)</strong> operation,
+          where effort grew directly proportional to the size of the Hostel.
+        </p>
+
+        <div class="analogy-box">
+          💡 <strong>Analogy:</strong> An array is like lockers in a corridor — fixed count, fixed position, instant access by number.
+        </div>
+
+        <!-- Learnings -->
+        <div class="learnings-section">
+          <h3>In-Depth Learnings</h3>
+          <ul class="learnings-list">
+            <li class="learning-item"><strong>Memory:</strong> Static Memory Allocation — size is fixed at initialization and cannot change.</li>
+            <li class="learning-item"><strong>Storage:</strong> Elements are stored contiguously in memory, enabling direct address calculation.</li>
+            <li class="learning-item"><strong>Access:</strong> Retrieval by index is <code>O(1)</code> (Constant Time) — the primary performance advantage.</li>
+            <li class="learning-item"><strong>Insertion/Deletion:</strong> Requires shifting up to N elements — <code>O(n)</code> (Linear Time).</li>
+            <li class="learning-item"><strong>Use Cases:</strong> Best when collection size is predictable, lookups are frequent, and modifications are rare.</li>
+          </ul>
+        </div>
+
+        <!-- Interactive Demo -->
+        <div class="interactive-demo">
+          <div class="demo-header">
+            <div class="demo-label">🎮 Interactive Demo</div>
+            <div class="demo-title">The Shifting Hostel</div>
+            <p class="demo-hint">Hover over a button to see the visual cost of that operation.</p>
+          </div>
+
+          <button class="demo-btn access-btn" type="button">Access Room 3 — O(1)</button>
+          <button class="demo-btn insert-btn" type="button">Insert at Index 2 — O(n)</button>
+
+          <div class="demo-stage" role="img" aria-label="Array rooms visualization">
+            <div class="room index-0">Room 0</div>
+            <div class="room index-1">Room 1</div>
+            <div class="room index-2">Room 2</div>
+            <div class="room index-3">Room 3</div>
+            <div class="room index-4">Room 4</div>
+          </div>
+        </div>
+
+        <!-- Quiz -->
+        <div class="quiz-section">
+          <div class="quiz-section-header">
+            <h4>❓ Post-Chapter Quiz — Arrays</h4>
+          </div>
+          <ul class="quiz-list">
+            <li class="question"><p>1. What is the Time Complexity for accessing an element in an Array by its index?</p><div class="correct-answer">O(1) — Constant Time</div></li>
+            <li class="question"><p>2. What type of memory allocation guarantees array elements are stored side-by-side?</p><div class="correct-answer">Contiguous Storage (Static Memory Allocation)</div></li>
+            <li class="question"><p>3. What constraint describes an array's inability to resize itself after creation?</p><div class="correct-answer">Static Memory Allocation</div></li>
+            <li class="question"><p>4. The time complexity for inserting an element at index 0 in a full array is:</p><div class="correct-answer">O(n)</div></li>
+            <li class="question"><p>5. Arrays are typically superior to Linked Lists when the primary need is:</p><div class="correct-answer">Fast, random element lookup</div></li>
+            <li class="question"><p>6. An array stores data elements in a sequential, index-based manner. True or False?</p><div class="correct-answer">True</div></li>
+          </ul>
+        </div>
+
+      </section><!-- /chapter-1 -->
+
+
+      <!-- ============================================
+           CHAPTER 2 — LINKED LISTS
+           ============================================ -->
+      <section id="chapter-2" class="dsa-chapter" aria-labelledby="ch2-title">
+
+        <header class="chapter-header">
+          <span class="chapter-icon" aria-hidden="true">🔗</span>
+          <div class="chapter-meta">
+            <div class="chapter-number">Chapter 02</div>
+            <h2 class="chapter-title" id="ch2-title">Linked Lists — The Train with Connectable Cars</h2>
+            <div class="chapter-badges">
+              <span class="complexity-tag slow">Access O(n)</span>
+              <span class="complexity-tag fast">Insert/Delete O(1)</span>
+            </div>
+          </div>
+        </header>
+
+        <p class="story-text">
+          Meet the Linked List Train, born from the desire for flexibility and freedom. Unlike the Array
+          Hostel's fixed structure, the Linked List is a collection of independent, movable units known
+          as <strong>Nodes</strong>. These nodes are scattered across the memory landscape wherever a
+          free spot can be found — they are <strong>non-contiguous</strong>.
+        </p>
+        <p class="story-text">
+          What holds the train together is not physical proximity, but an unwavering sense of direction.
+          Each Node carries its <strong>Data</strong> and a <strong>Pointer</strong> — an address label
+          that points precisely to the location of the next car. The whole chain begins with a single
+          designated starting point: the <strong>Head</strong>.
+        </p>
+        <p class="story-text">
+          Adding a car after Node B requires only two quick actions: change B's pointer to the new car,
+          and the new car's pointer to C. No mass movement, no relocations. This is <strong>O(1)</strong>.
+          However, finding the tenth car means starting at the Head and following every pointer
+          sequentially — a slow <strong>O(n)</strong> operation.
+        </p>
+
+        <div class="analogy-box">
+          💡 <strong>Analogy:</strong> A linked list is like a Scavenger Hunt — each clue points to the next location. You can't skip ahead; you must follow every step.
+        </div>
+
+        <div class="learnings-section">
+          <h3>In-Depth Learnings</h3>
+          <ul class="learnings-list">
+            <li class="learning-item"><strong>Memory:</strong> Dynamic Memory Allocation — the list can fluidly expand or contract during execution.</li>
+            <li class="learning-item"><strong>Storage:</strong> Nodes are allocated non-contiguously; logical order is maintained exclusively by internal reference pointers.</li>
+            <li class="learning-item"><strong>Access:</strong> No direct access — finding the Nth element requires traversal from the head: <code>O(n)</code>.</li>
+            <li class="learning-item"><strong>Insertion/Deletion:</strong> Once the insertion point is identified, only a constant number of pointer changes are needed: <code>O(1)</code>.</li>
+            <li class="learning-item"><strong>Node Structure:</strong> Every node contains a <strong>Data</strong> payload and a <strong>Pointer</strong> to its successor.</li>
+            <li class="learning-item"><strong>Use Cases:</strong> Best for applications with frequent additions/removals where random-access speed is not critical.</li>
+          </ul>
+        </div>
+
+        <div class="interactive-demo">
+          <div class="demo-header">
+            <div class="demo-label">🎮 Interactive Demo</div>
+            <div class="demo-title">The Traversal Train</div>
+            <p class="demo-hint">Hover a button to see the visual cost of that operation.</p>
+          </div>
+
+          <button class="demo-btn traverse-btn" type="button">Find Node C — O(n) Traversal</button>
+          <button class="demo-btn ll-insert-btn" type="button">Insert after Node B — O(1)</button>
+
+          <div class="demo-stage" role="img" aria-label="Linked list nodes visualization">
+            <div class="node" data-name="A">Node A</div>
+            <span class="pointer-arrow" aria-hidden="true">→</span>
+            <div class="node" data-name="B">Node B</div>
+            <span class="pointer-arrow" aria-hidden="true">→</span>
+            <div class="node" data-name="C">Node C</div>
+            <span class="pointer-arrow" aria-hidden="true">→</span>
+            <div class="node" data-name="D">Node D</div>
+          </div>
+        </div>
+
+        <div class="quiz-section">
+          <div class="quiz-section-header">
+            <h4>❓ Post-Chapter Quiz — Linked Lists</h4>
+          </div>
+          <ul class="quiz-list">
+            <li class="question"><p>1. Which operation is O(1) in a Linked List (assuming the preceding node is known)?</p><div class="correct-answer">Insertion / Deletion</div></li>
+            <li class="question"><p>2. What describes the memory allocation pattern of a Linked List?</p><div class="correct-answer">Non-contiguous and Dynamic</div></li>
+            <li class="question"><p>3. Finding the 50th element requires following 50 pointers from the head. The access complexity is:</p><div class="correct-answer">O(n)</div></li>
+            <li class="question"><p>4. What two components are contained within every Node in a Singly Linked List?</p><div class="correct-answer">Data and Pointer (to next node)</div></li>
+            <li class="question"><p>5. When adding/removing items frequently at the beginning of a collection, which trait makes Linked Lists advantageous?</p><div class="correct-answer">O(1) insertion/deletion cost</div></li>
+            <li class="question"><p>6. A Doubly Linked List differs by containing a second pointer that points:</p><div class="correct-answer">Back to the previous node</div></li>
+          </ul>
+        </div>
+
+      </section><!-- /chapter-2 -->
+
+
+      <!-- ============================================
+           CHAPTER 3 — QUEUES
+           ============================================ -->
+      <section id="chapter-3" class="dsa-chapter" aria-labelledby="ch3-title">
+
+        <header class="chapter-header">
+          <span class="chapter-icon" aria-hidden="true">🚌</span>
+          <div class="chapter-meta">
+            <div class="chapter-number">Chapter 03</div>
+            <h2 class="chapter-title" id="ch3-title">Queues — The Amusement Park Line</h2>
+            <div class="chapter-badges">
+              <span class="complexity-tag fast">Enqueue O(1)</span>
+              <span class="complexity-tag fast">Dequeue O(1)</span>
+            </div>
+          </div>
+        </header>
+
+        <p class="story-text">
+          The Queue is best understood as the line for an amusement park ride. The rule is sacred,
+          unbreakable, and absolute: <strong>First-In, First-Out (FIFO)</strong>. The first person to
+          join is the first person to experience the ride.
+        </p>
+        <p class="story-text">
+          The Queue maintains two critical positions: the <strong>Front (Head)</strong>, where the next
+          passenger is ready to exit, and the <strong>Rear (Tail)</strong>, where all new patrons must
+          join. Joining at the back (<strong>Enqueue</strong>) and leaving from the front
+          (<strong>Dequeue</strong>) are both instant <strong>O(1)</strong> operations — no matter how
+          long the line stretches.
+        </p>
+        <p class="story-text">
+          This simplicity is the Queue's strength. It perfectly models tasks requiring strict
+          chronological order and fairness: task scheduling, print jobs, network buffering, and
+          Breadth-First Search algorithms.
+        </p>
+
+        <div class="analogy-box">
+          💡 <strong>Analogy:</strong> A queue is like a printer spooling tasks — the first job sent is the first job printed. No cutting in line.
+        </div>
+
+        <div class="learnings-section">
+          <h3>In-Depth Learnings</h3>
+          <ul class="learnings-list">
+            <li class="learning-item"><strong>Core Principle:</strong> FIFO (First-In, First-Out) — strict chronological fairness of access.</li>
+            <li class="learning-item"><strong>Enqueue:</strong> Insert at the Rear/Tail — <code>O(1)</code>.</li>
+            <li class="learning-item"><strong>Dequeue:</strong> Remove from the Front/Head — <code>O(1)</code>.</li>
+            <li class="learning-item"><strong>Structure:</strong> Requires tracking two pointers: Front and Rear.</li>
+            <li class="learning-item"><strong>Use Cases:</strong> Task scheduling, printer queues, BFS graph traversal, data buffering.</li>
+            <li class="learning-item"><strong>Gotcha:</strong> A naive array implementation causes O(n) dequeue due to element shifting — use a circular array or linked list instead.</li>
+          </ul>
+        </div>
+
+        <div class="interactive-demo">
+          <div class="demo-header">
+            <div class="demo-label">🎮 Interactive Demo</div>
+            <div class="demo-title">Enqueue / Dequeue</div>
+            <p class="demo-hint">Hover a button to see which end of the queue is affected.</p>
+          </div>
+
+          <button class="demo-btn enqueue-btn" type="button">Enqueue — Add to Rear</button>
+          <button class="demo-btn dequeue-btn" type="button">Dequeue — Remove from Front</button>
+
+          <div class="demo-stage" role="img" aria-label="Queue visualization">
+            <div class="room index-0">Front</div>
+            <div class="room index-1">P2</div>
+            <div class="room index-2">P3</div>
+            <div class="room index-3">P4</div>
+            <div class="room index-4">Rear</div>
+          </div>
+        </div>
+
+        <div class="quiz-section">
+          <div class="quiz-section-header">
+            <h4>❓ Post-Chapter Quiz — Queues</h4>
+          </div>
+          <ul class="quiz-list">
+            <li class="question"><p>1. What principle governs the order of operations in a Queue?</p><div class="correct-answer">FIFO — First-In, First-Out</div></li>
+            <li class="question"><p>2. What is the time complexity for both Enqueue and Dequeue operations?</p><div class="correct-answer">O(1) — Constant Time</div></li>
+            <li class="question"><p>3. Enqueue refers to adding an element at which end of the Queue?</p><div class="correct-answer">The Rear (Tail)</div></li>
+            <li class="question"><p>4. Which pointer indicates the element that will be removed next?</p><div class="correct-answer">Front (Head)</div></li>
+            <li class="question"><p>5. Which common algorithm frequently uses a Queue as its core data structure?</p><div class="correct-answer">Breadth-First Search (BFS)</div></li>
+            <li class="question"><p>6. Implementing a Queue using a standard array is inefficient because Dequeue leads to:</p><div class="correct-answer">O(n) element shifting</div></li>
+          </ul>
+        </div>
+
+      </section><!-- /chapter-3 -->
+
+
+      <!-- ============================================
+           CHAPTER 4 — SEARCHING
+           ============================================ -->
+      <section id="chapter-4" class="dsa-chapter" aria-labelledby="ch4-title">
+
+        <header class="chapter-header">
+          <span class="chapter-icon" aria-hidden="true">🔍</span>
+          <div class="chapter-meta">
+            <div class="chapter-number">Chapter 04</div>
+            <h2 class="chapter-title" id="ch4-title">Searching — The Library Hunt</h2>
+            <div class="chapter-badges">
+              <span class="complexity-tag slow">Linear O(n)</span>
+              <span class="complexity-tag fast">Binary O(log n)</span>
+            </div>
+          </div>
+        </header>
+
+        <p class="story-text">
+          Searching is the fundamental quest to locate a single desired item within a vast collection.
+          Our library illustrates the difference between efficiency and brute force.
+        </p>
+        <p class="story-text">
+          <strong>Linear Search</strong> — the disorganized librarian. Books are scattered randomly,
+          utterly unsorted. To find the scroll, you check every title, shelf by shelf. In the worst case
+          it's the very last item: <strong>O(n)</strong>. Simple to implement, but terrible for large
+          libraries.
+        </p>
+        <p class="story-text">
+          <strong>Binary Search</strong> — the master strategist. One prerequisite: all books must be
+          sorted. Walk to the middle, ask "is the target before or after?" Instantly discard half the
+          library. Repeat. A million-book library can be searched in just <strong>20 steps</strong> —
+          <strong>O(log n)</strong>.
+        </p>
+
+        <div class="analogy-box">
+          💡 <strong>Linear Search</strong> is like scrolling an unordered contact list (O(n)). <strong>Binary Search</strong> is like using a phonebook — open the middle, go left or right (O(log n)).
+        </div>
+
+        <div class="learnings-section">
+          <h3>In-Depth Learnings</h3>
+          <ul class="learnings-list">
+            <li class="learning-item"><strong>Linear Search:</strong> <code>O(n)</code> — checks up to N elements in the worst case. Works on unsorted data.</li>
+            <li class="learning-item"><strong>Binary Search Pre-requisite:</strong> Data <em>must</em> be sorted before searching begins.</li>
+            <li class="learning-item"><strong>Binary Search:</strong> <code>O(log n)</code> — halves the search space at every step. Extremely fast on large datasets.</li>
+            <li class="learning-item"><strong>Trade-off:</strong> Binary search is fast, but the initial sort costs up to <code>O(n log n)</code>.</li>
+            <li class="learning-item"><strong>Use Cases:</strong> Binary search for large, static, sorted databases. Linear search for small or unsorted lists.</li>
+          </ul>
+        </div>
+
+        <div class="interactive-demo">
+          <div class="demo-header">
+            <div class="demo-label">🎮 Interactive Demo</div>
+            <div class="demo-title">Search Efficiency — Target: 4</div>
+            <p class="demo-hint">Hover to see each algorithm highlight the bars it checks.</p>
+          </div>
+
+          <button class="demo-btn linear-search-btn" type="button">Linear Search — O(n)</button>
+          <button class="demo-btn binary-search-btn" type="button">Binary Search — O(log n)</button>
+
+          <div class="demo-stage" role="img" aria-label="Search array visualization">
+            <div class="array-bar s1">1</div>
+            <div class="array-bar s2">2</div>
+            <div class="array-bar s3">3</div>
+            <div class="array-bar s4">4</div>
+            <div class="array-bar s5">5</div>
+          </div>
+        </div>
+
+        <div class="quiz-section">
+          <div class="quiz-section-header">
+            <h4>❓ Post-Chapter Quiz — Searching</h4>
+          </div>
+          <ul class="quiz-list">
+            <li class="question"><p>1. What is the Big O complexity for Linear Search in the worst case?</p><div class="correct-answer">O(n)</div></li>
+            <li class="question"><p>2. What is the fundamental requirement for using Binary Search?</p><div class="correct-answer">The data must be sorted.</div></li>
+            <li class="question"><p>3. Binary Search repeatedly divides the search interval in half. What is the complexity?</p><div class="correct-answer">O(log n)</div></li>
+            <li class="question"><p>4. Which search method is best for a small, unsorted array?</p><div class="correct-answer">Linear Search</div></li>
+            <li class="question"><p>5. Binary Search can be implemented using recursion. True or False?</p><div class="correct-answer">True</div></li>
+            <li class="question"><p>6. If an array has 1024 elements, what is the maximum number of comparisons Binary Search needs?</p><div class="correct-answer">10 (since log₂ 1024 = 10)</div></li>
+          </ul>
+        </div>
+
+      </section><!-- /chapter-4 -->
+
+
+      <!-- ============================================
+           CHAPTER 5 — SORTING
+           ============================================ -->
+      <section id="chapter-5" class="dsa-chapter" aria-labelledby="ch5-title">
+
+        <header class="chapter-header">
+          <span class="chapter-icon" aria-hidden="true">📐</span>
+          <div class="chapter-meta">
+            <div class="chapter-number">Chapter 05</div>
+            <h2 class="chapter-title" id="ch5-title">Sorting — Arranging the Blueprints</h2>
+            <div class="chapter-badges">
+              <span class="complexity-tag slow">Bubble Sort O(n²)</span>
+              <span class="complexity-tag fast">Merge Sort O(n log n)</span>
+            </div>
+          </div>
+        </header>
+
+        <p class="story-text">
+          Sorting is the art of imposing order on chaos. The true complexity lies not in the final
+          ordered stack, but in the journey taken to achieve it.
+        </p>
+        <p class="story-text">
+          The architect using <strong>Bubble Sort</strong> compares two adjacent blueprints and swaps
+          them if they're in the wrong order, then moves to the next pair — iterating again and again
+          until the largest bubble to the top. Multiple full passes across nearly all pairs gives a
+          massive <strong>O(n²)</strong> complexity. Fine for a cottage; an eon for a skyscraper.
+        </p>
+        <p class="story-text">
+          Then there's <strong>Merge Sort</strong>. The architect divides the stack into smaller and
+          smaller sub-stacks until each contains just one item (trivially sorted), then merges them back
+          in perfect order. This "Divide and Conquer" strategy scales beautifully to
+          <strong>O(n log n)</strong> — the gold standard for massive datasets.
+        </p>
+
+        <div class="analogy-box">
+          💡 <strong>O(n²)</strong> is like fixing every misplaced card one swap at a time. <strong>O(n log n)</strong> is like splitting the deck in half, sorting each half, then merging back together.
+        </div>
+
+        <div class="learnings-section">
+          <h3>In-Depth Learnings</h3>
+          <ul class="learnings-list">
+            <li class="learning-item"><strong>Quadratic Sorts:</strong> Bubble, Insertion, and Selection Sort — <code>O(n²)</code> average. Best only for very small arrays.</li>
+            <li class="learning-item"><strong>Log-Linear Sorts:</strong> Merge Sort and Quick Sort — <code>O(n log n)</code> average. Workhorses of industry.</li>
+            <li class="learning-item"><strong>Space Complexity:</strong> Merge Sort requires <code>O(n)</code> auxiliary space; Quick Sort (in-place) uses only <code>O(log n)</code> stack space.</li>
+            <li class="learning-item"><strong>Stability:</strong> A sort is <em>stable</em> if it preserves the relative order of equal elements — critical for multi-key database sorting.</li>
+            <li class="learning-item"><strong>Adaptive Sorting:</strong> Insertion Sort shines on nearly-sorted input, approaching <code>O(n)</code>.</li>
+          </ul>
+        </div>
+
+        <div class="interactive-demo">
+          <div class="demo-header">
+            <div class="demo-label">🎮 Interactive Demo</div>
+            <div class="demo-title">One Step of Each Sort</div>
+            <p class="demo-hint">Hover to visualize a single inner-loop step of each algorithm.</p>
+          </div>
+
+          <button class="demo-btn bubble-sort-btn" type="button">Bubble Sort Step — Compare &amp; Swap</button>
+          <button class="demo-btn insertion-sort-btn" type="button">Insertion Sort Step — Shift &amp; Insert</button>
+
+          <div class="demo-stage" role="img" aria-label="Sort array visualization">
+            <div class="array-bar h3">3</div>
+            <div class="array-bar h2">2</div>
+            <div class="array-bar h4">4</div>
+            <div class="array-bar h1">1</div>
+          </div>
+        </div>
+
+        <div class="quiz-section">
+          <div class="quiz-section-header">
+            <h4>❓ Post-Chapter Quiz — Sorting</h4>
+          </div>
+          <ul class="quiz-list">
+            <li class="question"><p>1. Which basic sorting algorithm has O(n²) average complexity and is considered the slowest?</p><div class="correct-answer">Bubble Sort</div></li>
+            <li class="question"><p>2. What is the average time complexity of Merge Sort?</p><div class="correct-answer">O(n log n)</div></li>
+            <li class="question"><p>3. The term "In-place" in sorting algorithms refers to:</p><div class="correct-answer">Using O(1) auxiliary space (minimal extra memory).</div></li>
+            <li class="question"><p>4. Which sort algorithm's best-case is O(n) when the array is already sorted?</p><div class="correct-answer">Insertion Sort</div></li>
+            <li class="question"><p>5. Which sorting technique is an example of the Divide and Conquer paradigm?</p><div class="correct-answer">Merge Sort</div></li>
+            <li class="question"><p>6. Quick Sort is often preferred over Merge Sort for arrays because:</p><div class="correct-answer">Quick Sort is typically in-place — better memory usage.</div></li>
+          </ul>
+        </div>
+
+      </section><!-- /chapter-5 -->
+
+
+      <!-- ============================================
+           INTERVIEW CORNER
+           ============================================ -->
+      <section id="chapter-7" class="dsa-chapter interview-section" aria-labelledby="ch7-title">
+
+        <header class="chapter-header">
+          <span class="chapter-icon" aria-hidden="true">🏆</span>
+          <div class="chapter-meta">
+            <div class="chapter-number">Interview Corner</div>
+            <h2 class="chapter-title" id="ch7-title">Land the Job</h2>
+          </div>
+        </header>
+
+        <p class="story-text">
+          A curated set of DSA problems most frequently asked by top tech companies.
+          Master the patterns, not just the solutions.
+        </p>
+
+        <div class="problem-grid">
+
+          <!-- Problem 1 -->
+          <div class="interview-problem">
+            <div class="problem-header">
+              <span class="company-tag google-tag">Google</span>
+              <span class="difficulty-tag medium">Medium</span>
+            </div>
+            <h3 class="problem-title">Maximum Subarray Sum (Kadane's)</h3>
+            <p class="problem-desc">Find the contiguous subarray (containing at least one number) which has the largest sum.</p>
+            <input type="checkbox" id="sol-toggle-1" class="solution-checkbox" />
+            <label for="sol-toggle-1" class="solution-toggle-label"></label>
+            <div class="solution-details">
+              Use <strong>Kadane's Algorithm</strong> — a single-pass greedy/DP approach. Track
+              <code>currentMax</code> (best sum ending here) and <code>globalMax</code> (best seen so far).
+              At each element: <code>currentMax = max(num, currentMax + num)</code>.
+              Time Complexity: <strong>O(n)</strong>. Space: <strong>O(1)</strong>.
+            </div>
+          </div>
+
+          <!-- Problem 2 -->
+          <div class="interview-problem">
+            <div class="problem-header">
+              <span class="company-tag meta-tag">Meta</span>
+              <span class="difficulty-tag easy">Easy</span>
+            </div>
+            <h3 class="problem-title">Reverse a Linked List</h3>
+            <p class="problem-desc">Given the head of a singly linked list, reverse the list and return the new head.</p>
+            <input type="checkbox" id="sol-toggle-2" class="solution-checkbox" />
+            <label for="sol-toggle-2" class="solution-toggle-label"></label>
+            <div class="solution-details">
+              Iterative approach using three pointers: <code>prev = null</code>, <code>curr = head</code>,
+              <code>next = null</code>. Loop: store <code>next = curr.next</code>, reverse the pointer
+              <code>curr.next = prev</code>, advance both. Return <code>prev</code> when done.
+              Time: <strong>O(n)</strong>. Space: <strong>O(1)</strong>.
+            </div>
+          </div>
+
+          <!-- Problem 3 -->
+          <div class="interview-problem">
+            <div class="problem-header">
+              <span class="company-tag amazon-tag">Amazon</span>
+              <span class="difficulty-tag easy">Easy</span>
+            </div>
+            <h3 class="problem-title">Two Sum</h3>
+            <p class="problem-desc">Return the indices of the two numbers in an array that add up to a specific target.</p>
+            <input type="checkbox" id="sol-toggle-3" class="solution-checkbox" />
+            <label for="sol-toggle-3" class="solution-toggle-label"></label>
+            <div class="solution-details">
+              Use a <strong>Hash Map</strong>. For each element <code>num</code> at index <code>i</code>,
+              look up <code>target - num</code> in the map. If found, return both indices. Otherwise,
+              store <code>map[num] = i</code>. Single pass lookup is <strong>O(1)</strong> per step.
+              Time: <strong>O(n)</strong>. Space: <strong>O(n)</strong>.
+            </div>
+          </div>
+
+        </div>
+
+      </section><!-- /chapter-7 -->
+
+    </div><!-- /container -->
+  </main>
+
+
+  <!-- ================================================
+       FOOTER
+       ================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">🏰 DSA Story-Land</div>
+        <nav class="footer-meta" aria-label="Footer navigation">
+          <a href="#chapter-1">Arrays</a>
+          <a href="#chapter-2">Linked Lists</a>
+          <a href="#chapter-3">Queues</a>
+          <a href="#chapter-4">Searching</a>
+          <a href="#chapter-5">Sorting</a>
+          <a href="#chapter-7">Interview Corner</a>
+        </nav>
+        <p class="footer-copy">Built with 🧠 and ✨ &copy; 2025 DSA Story-Land</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="js/main.js"></script>
+</body>
+</html>
